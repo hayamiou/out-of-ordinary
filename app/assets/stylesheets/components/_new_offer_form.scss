@@ -1,29 +1,20 @@
-h2 {
-  font-family: 'teko';
-  letter-spacing: 3px;
-}
-
-.button{
-  font-family: 'teko';
-  font-weight: lighter;
-  letter-spacing: 3px;
-}
-
 .container {
   margin-top: 150px;
+  color: $text;
 }
 
 .feedback-form {
   align-items: center;
   width: 400px;
-  background-color: #fcfcfc;
+  background-color: $background;
   padding: 20px 50px 40px;
-  box-shadow: 1px 4px 10px 1px #aaa;
+  box-shadow: 1px 4px 10px 1px $primary;
   border-radius: 15px;
   font-family: sans-serif;
 }
 
 .feedback-form * {
+  color: $text;
     box-sizing: border-box;
 }
 
@@ -32,28 +23,27 @@ h2 {
   margin-bottom: 30px;
 }
 
-.feedback-form input {
-  margin-bottom: 15px;
+#offer_description{
+  color: $text;
 }
 
-.feedback-form input {
+.feedback-form input:not([type="submit"]) {
+  color: $text;
   display: block;
   height: 32px;
   padding: 6px 16px;
   width: 100%;
   border: none;
+  margin-bottom: 15px;
   background-color: #f3f3f3;
 }
 
 .feedback-form label {
-  color: #777;
+  color: $text;
   font-size: 0.8em;
 }
 
-
-
-
-.feedback-form .button {
+.feedback-form .btn {
   display: block;
   margin: 20px auto 0;
   width: 180px;

@@ -1,5 +1,9 @@
 <h1>Offers</h1>
 
+<div>
+  <%= link_to 'Create a list', new_offer_form, offer: @offer %>
+</div>
+
 <% @offers.each do |offer| %>
   <ul>
     <li><%= offer.title %>, description: <%= offer.price %>, description: <%= offer.price %></li>

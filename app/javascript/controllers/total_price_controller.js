@@ -11,10 +11,16 @@ export default class extends Controller {
 
   calculateTotalPrice(event) {
     const value = this.inputTarget.value
-    const startTime = new Date(this.startDateTarget.value)
-    const endTime = new Date(this.endDateTarget.value)
-    const duration = (endTime - startTime)/ (1000 * 3600 * 24)
-    const total = value * this.priceValue * duration
-    this.totalPriceTarget.innerHTML = total
+
+    const startValue = this.startDateTarget.value
+    const endValue = this.endDateTarget.value
+
+    if(value && startValue && endValue) {
+      const startTime = new Date(startValue)
+      const endTime = new Date(endValue)
+      const duration = (endTime - startTime)/ (1000 * 3600 * 24)
+      const total = value * this.priceValue * duration
+      this.totalPriceTarget.innerHTML = total
+    }
   }
 }

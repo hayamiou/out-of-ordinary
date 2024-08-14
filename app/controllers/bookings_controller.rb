@@ -5,17 +5,15 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @offer = Offer.find(params[:offer_id])
     @booking = Booking.new(booking_params)
 
-    days = (@booking.date_end - @booking.date_start).to_i
-    @booking.total_price = @booking.number_of_persons * days * @offer.price
+    @booking.user = current_user
+    @booking.offer = @offer
 
     if @booking.save
       redirect_to root_path, notice: 'Booking was successfully created.'
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end

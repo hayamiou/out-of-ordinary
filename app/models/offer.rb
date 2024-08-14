@@ -3,6 +3,9 @@ class Offer < ApplicationRecord
   has_many :bookings
   validates :title, :description, :price, :address, :places, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   def next
     Offer.where("id > ?", id).order(:id).first
   end

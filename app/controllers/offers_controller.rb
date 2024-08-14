@@ -2,10 +2,23 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
   def index
     @offers = Offer.all
+
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+      }
+    end
   end
 
   def show
     @offer = Offer.find(params[:id])
+    @markers = [
+      {
+        lat: @offer.latitude,
+        lng: @offer.longitude
+      }
+    ]
   end
 
   def new

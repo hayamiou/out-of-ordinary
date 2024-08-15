@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   resources :offers, only: %i[index show new create] do
     resources :bookings, only: %i[new create]
   end
+  resources :dashboard, only: %i[] do
+    collection do
+      get :my_bookings
+    end
+  end
 end

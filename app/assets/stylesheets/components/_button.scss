@@ -14,3 +14,12 @@
   color: $text;
   box-shadow: 10px 5px 5px $primary;
 }
+
+.btn-home {
+  color: white
+}
+
+.btn-home:hover {
+  box-shadow: 10px 5px 5px $primary;
+  color: white
+}

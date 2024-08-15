@@ -1,3 +1,4 @@
+Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 user = User.create(email: "pleinlabox@gmail.com", password: "555555")

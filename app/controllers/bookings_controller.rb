@@ -18,6 +18,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(accepted: params[:accepted])
+    redirect_to dashboards_my_bookings_path
+  end
+
   private
 
   def booking_params

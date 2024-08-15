@@ -10,12 +10,18 @@
       <p>For <%= booking.number_of_persons %> 👫👬👭</p>
       <% if can_accept %>
         <% if booking.accepted %>
-          <button class="btn btn-success" disabled="true">:coche_trait_plein: Accepted</button>
+          <button class="btn btn-success" disabled="true"> ✅ Accepted</button>
         <% elsif booking.accepted == false %>
-          <button class="btn btn-danger" disabled="true">:signe_de_multiplication_trait_plein: Declined</button>
+          <button class="btn btn-danger" disabled="true"> ❌ Declined</button>
         <% else booking.accepted = nil %>
-          <%= link_to "Accept", dashboards_my_bookings_path(booking, accepted: true), data: { turbo_method: :patch }, class:"btn btn-success" %>
-          <%= link_to "Decline", dashboards_my_bookings_path(booking, accepted: false), data: { turbo_method: :patch }, class:"btn btn-danger" %>
+          <%= link_to "Accept", booking_path(booking, accepted: true), data: { turbo_method: :patch }, class:"btn btn-success" %>
+          <%= link_to "Decline", booking_path(booking, accepted: false), data: { turbo_method: :patch }, class:"btn btn-danger" %>
+        <% end %>
+      <% else %>
+        <% if booking.accepted.nil? %>
+          <p>Awaiting for answer</p>
+        <% else %>
+          <p>Status : <%= booking.accepted? ? "Accepted" : "Declined" %></p>
         <% end %>
       <% end %>
     </div>

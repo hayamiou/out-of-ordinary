@@ -35,10 +35,27 @@ class OffersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  def edit
+    @offer = Offer.find(params[:id])
+  end
+
+  def update
+    @offer = Offer.find(params[:id])
+    if @offer.update(offer_params)
+      redirect_to offer_path(@offer)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+  end
 
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :price, :address, :places)
+    params.require(:offer).permit(:title, :description, :price, :address, :places, :photo)
   end
 end

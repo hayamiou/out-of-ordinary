@@ -1,21 +1,31 @@
 <div class="banner-offer mt-3 mx-3">
-  <img src="https://www.lejdd.fr/lmnr/var/jdd/public/media/image/2022/07/19/12/escrime-comment-les-francais-apprivoisent-leurs-armes.jpg?VersionId=Mw31AogdDUwVLuCaVdxMozm9kito7TTP" />
+  <img src="<%= @offer.photo.attached? ? cl_image_path(@offer.photo.key) : 'https://img.freepik.com/vecteurs-premium/vecteur-icone-image-par-defaut-page-image-manquante-pour-conception-site-web-application-mobile-aucune-photo-disponible_87543-11093.jpg' %>" />
   <div class="banner-offer-infos">
-      <h1><%= @offer.title.capitalize %> 🎯</h1>
+    <h1><%= @offer.title.capitalize %> 🎯</h1>
+    <div class="icone p-3">
+      <% if current_user == @offer.user %>
+        <%= link_to edit_offer_path(@offer) do %>
+          <i class="fas fa-edit position-absolute bottom-0 end-0 px-2 py-2"></i>
+        <% end %>
+        <%= link_to offer_path(@offer), class:"text-white", data: {turbo_method: :delete, turbo_confirm: 'Are you sure brooo ??'} do %>
+          <i class="fa-regular fa-trash-can position-absolute top-0 end-0 px-2 py-2"></i>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div class="container-card d-flex row mx-auto">
-  <div class="col-4">
-    <div class="cards-offer d-flex mt-3">
-      <div class="card-offer d-flex flex-column justify-content-between" style="height: 100%;">
+<div class="container-card d-flex row">
+  <div class="col-4 align-self-center">
+    <div class="cards-offer d-flex mt-3 justify-content-evenly">
+      <div class="card-offer flex-column" style="height: 100%;">
         <div class="card-offer-information">
           <h2> Information : </h2>
-          <p> 💳 <%= @offer.price %> € </p>
+          <p> 💳 <%= @offer.price %> € </p> align-middle
           <p> 📍 <%= @offer.address %></p>
           <p> 👭👫👬 <%= @offer.places %> people(s) </p>
         </div>
-        <div class="card-offer-description mt-auto">
+        <div class="card-offer-description">
           <h2>Description :</h2>
           <p><%= @offer.description %></p>
         </div>
@@ -23,21 +33,20 @@
     </div>
   </div>
 
-  <div class="col-4 map">
-    <%= render 'map' %>
+  <div class="col-4 align-self-center">
+    <%= render 'map', class:"flex-column justify-content-center" %>
+    <div class="d-flex justify-content-center mb-3">
+      <div class = "">
+        <%= link_to '🔙', offer_path(@offer.prev), class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' if @offer.prev %>
+        <%= link_to 'All', root_path, class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' %>
+        <%= link_to '🔜', offer_path(@offer.next), class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' if @offer.next %>
+      </div>
+  </div>
   </div>
 
   <div class="col-4">
     <div class="card-offer text-center">
       <%= render 'bookings/new_booking_form', booking: @booking, offer: @offer %>
-    </div>
-  </div>
-
-  <div class="d-flex justify-content-center mb-3">
-    <div class = "">
-      <%= link_to '🔙', offer_path(@offer.prev), class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' if @offer.prev %>
-      <%= link_to 'All', root_path, class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' %>
-      <%= link_to '🔜', offer_path(@offer.next), class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' if @offer.next %>
     </div>
   </div>
 </div>

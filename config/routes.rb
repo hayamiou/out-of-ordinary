@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   #   end
   # end
   get 'dashboards/my_bookings', to: 'dashboards#my_bookings'
-
+  resources :bookings, only: %i[update]
 end

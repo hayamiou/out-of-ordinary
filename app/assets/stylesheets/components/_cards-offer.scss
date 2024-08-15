@@ -1,15 +1,29 @@
 
 .container-card {
-  height: 450px;
+  height: 300px;
+  img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top -100px right 0px;
+  }
 }
 
 .cards-offer {
   grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 25px;
   text-align: center;
+
 }
 
 .cards-offer h2 {
   font-size: 32px;
   font-weight: bold;
+}
+
+.card-cover{
+  img {
+    background-size:auto;
+    object-position:center;
+  }
 }

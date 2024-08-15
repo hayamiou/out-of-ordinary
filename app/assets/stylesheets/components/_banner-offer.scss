@@ -2,12 +2,12 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.banner-offer > img {
-  height: 350px;
-  width: 100%;
-  object-fit: cover;
+  img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top -100px right 0px;
+  }
 }
 
 .banner-offer h1 {
@@ -22,4 +22,8 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+i{
+color: $text;
 }

@@ -1,16 +1,20 @@
-
-<div class="banner">
-  <img src="https://media.istockphoto.com/id/156303675/photo/goofy-skeptical-redneck-with-mullet.jpg?s=612x612&w=0&k=20&c=gHpTRvbn7f2XZy63CPgf01hRXNH8IK2g0ATrXJYxStg=" />
+<div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("photo_banner.jpg")%>)">
+    <div class="container">
+      <h1> <strong>OUT</strong> OF <strong>ORDINARY</strong></h1>
+      <p>Be extraordinary.</p>
+      <div class="links position-absolute bottom-0 end-0 px-5 py-5">
+        <a><%= link_to 'Create an adventure', new_offer_path, class:'btn btn-home btn-ghost'%></a>
+        <a href="#section1" class="btn btn-home btn-ghost" >Live the extraordinary</a>
+      </div>
+    </div>
 </div>
 
-
-<div class="container mt-3">
-  <div class="row">
+<div class="container mt-3" id="section1">
+  <div class="row pt-5">
     <div class="col-md-8">
-      <h1 class="pb-2"></h1>
-      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4">
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch">
         <% @offers.each do |offer| %>
-          <div class="col">
+          <div class="col pb-5">
             <%= link_to offer, class:"text-decoration-none" do %>
               <div class="card.offer card-cover h-100 text-bg-dark rounded-4 shadow-lg", style="background-image: url(<%= offer.photo.attached? ? cl_image_path(offer.photo.key) : 'https://img.freepik.com/vecteurs-premium/vecteur-icone-image-par-defaut-page-image-manquante-pour-conception-site-web-application-mobile-aucune-photo-disponible_87543-11093.jpg' %>);">
                 <div class="d-flex flex-column justify-content-end pb-3 text-white text-shadow-1">
@@ -33,7 +37,11 @@
         <% end %>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="col-md-4 mt-3">
+=======
+    <div class="col-md-4 ">
+>>>>>>> master
       <%= render 'map' %>
     </div>
   </div>

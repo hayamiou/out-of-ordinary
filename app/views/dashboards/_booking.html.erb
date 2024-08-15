@@ -1,0 +1,23 @@
+<div class="col-12 col-sm-6 col-md-4 col-lg-4">
+  <div class="card-dashboard">
+    <div class="picture">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+    </div>
+    <div class="card-dashboard-infos">
+      <h2 class="text-truncate p-2"><%= booking.offer.title %></h2>
+      <p><strong><%= booking.total_prices %></strong> € </p>
+      <p>From <%= booking.date_start %> to <%= booking.date_end%></p>
+      <p>For <%= booking.number_of_persons %> 👫👬👭</p>
+      <% if can_accept %>
+        <% if booking.accepted %>
+          <button class="btn btn-success" disabled="true">:coche_trait_plein: Accepted</button>
+        <% elsif booking.accepted == false %>
+          <button class="btn btn-danger" disabled="true">:signe_de_multiplication_trait_plein: Declined</button>
+        <% else booking.accepted = nil %>
+          <%= link_to "Accept", dashboards_my_bookings_path(booking, accepted: true), data: { turbo_method: :patch }, class:"btn btn-success" %>
+          <%= link_to "Decline", dashboards_my_bookings_path(booking, accepted: false), data: { turbo_method: :patch }, class:"btn btn-danger" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

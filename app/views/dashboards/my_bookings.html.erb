@@ -1,1 +1,47 @@
 <h1>Your dashboard :</h1>
+
+<div class="card-booking">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-booking-infos">
+    <h1>Your dashboard :</h1>
+  </div>
+</div>
+
+<h2> My booking status : </h2>
+<div class="items-card">
+  <div class="row">
+    <% @offers_bookings.each do |booking| %>
+      <%= render partial: "dashboards/booking", locals: { can_accept: true, booking: booking } %>
+    <% end %>
+  </div>
+</div>
+
+<h2> My booking : </h2>
+<div class="items-card">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <%= render partial: "dashboards/booking", locals: { can_accept: false, booking: booking } %>
+    <% end %>
+  </div>
+</div>
+
+
+<h2> All my offers : </h2>
+<div class="items-card">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+  <% @my_offers.each do |offers| %>
+    <div class="card-dashboard">
+      <div class="picture">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      </div>
+      <div class="card-dashboard-infos">
+        <h2 class="text-truncate p-2"><%= offers.title %></h2>
+        <p><strong><%= offers.description %></strong> € </p>
+        <p><%= offers.price %> € </p>
+        <p><%= offers.address %></p>
+        <p>For <%= offers.places %> 👫👬👭</p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

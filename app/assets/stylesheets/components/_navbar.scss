@@ -2,6 +2,13 @@
   justify-content: space-between;
   background: $background;
   position: sticky;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+}
+
+.avatar{
+  width: 55px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,6 +16,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
-  margin-left: 10px;
+  width: 80px;
+  margin: 0;
+  padding: 0;
 }

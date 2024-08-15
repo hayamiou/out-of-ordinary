@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   resources :offers, only: %i[index show new create] do
     resources :bookings, only: %i[new create]
   end
-  resources :dashboard, only: %i[] do
-    collection do
-      get :my_bookings
-    end
-  end
+  # resources :dashboards, only: %i[] do
+  #   collection do
+  #     get :my_bookings
+  #   end
+  # end
+  get 'dashboards/my_bookings', to: 'dashboards#my_bookings'
+
 end

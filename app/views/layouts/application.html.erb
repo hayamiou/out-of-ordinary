@@ -44,5 +44,22 @@
     </div>
 
     <%= yield %>
+
+<footer>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="https://avocat-droit-succession-cahen.fr/avant-prevoir/comment-rediger-un-testament-avec-un-avocat/"><i class="fa-solid fa-scale-balanced"></i></a>
+      <a href="https://www.youtube.com/watch?v=CwQfO8SV07I"><i class="fab fa-github"></i></a>
+      <a href="https://www.youtube.com/watch?v=fZfsE1rtkUQ"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/watch?v=tXnqrjZddcI"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.youtube.com/watch?v=i6wki3Y3n2A"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/watch?v=xXXMLeNdWeM"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      <% footer_motto = ["Vous avez signé votre testament ? Parfait, bienvenue chez nous !", "Pour ceux qui trouvent le saut en parachute trop mainstream.", "Adrenaline, frissons et un soupçon de folie – on ne garantit pas que vous reviendrez entier !", "Parce que la vie est trop courte pour rester en sécurité.", "Vous cherchez à mettre du piment dans votre vie ? On a de quoi enflammer votre quotidien.", "Votre mère vous a dit de ne jamais faire ça ? Nous, on vous encourage !", "Pour ceux qui veulent des souvenirs à raconter... s'ils reviennent pour les raconter.", "Ici, on prend le mot ‘insolite’ très au sérieux… et le mot ‘dangereux’ encore plus !", "On vous promet du fun, du danger, et peut-être même un passage aux urgences.", "Pourquoi vivre dangereusement quand on peut vivre dangereusement ET bizarrement ?", "Avertissement : nous ne sommes pas responsables des cris, des larmes ou des besoins soudains d'une nouvelle paire de sous-vêtements."] %>
+      © <%= footer_motto[rand(footer_motto.length)]%>
+    </div>
+  </div>
+</footer>
   </body>
 </html>

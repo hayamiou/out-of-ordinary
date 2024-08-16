@@ -13,8 +13,6 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   text-align: center;
-
-
 }
 
 .cards-offer {
@@ -23,19 +21,17 @@
   font-weight: bold;
   }
   p {
-    font-size: 28px;
-    margin-left: 7px;
+    font-size: 22px;
+    margin-left: 5px;
   }
 }
 
-.card-cover{
-  img {
-    background-size:auto;
-    object-position:center;
-  }
+.card-offer {
+  background-size: cover;
+  background-position: center;
 }
 
-.card-offer{
+.card-offer > img{
   background-size: cover;
   background-position: center;
 }

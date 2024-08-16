@@ -6,7 +6,7 @@
 }
 
 .card-booking > img {
-  height: 200px;
+  height: 400px;
   width: 100%;
   object-fit: cover;
 }
@@ -28,5 +28,6 @@
 .items-card > img {
   height: 150px;
   width: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
 }

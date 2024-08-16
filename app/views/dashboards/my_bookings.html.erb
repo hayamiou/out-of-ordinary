@@ -6,7 +6,7 @@
 </div>
 
 <div class="d-flex justify-content-evenly m-3">
-  <button class="btn btn-ghost" type="button" data-bs-toggle="collapse" data-bs-target="#status" aria-expanded="false" aria-controls="collapseExample">
+  <button class="btn btn-ghost" type="button" data-bs-toggle="collapse" data-bs-target="#offers_bookings" aria-expanded="false" aria-controls="collapseExample">
     <h2> My booking status</h2>
   </button>
 
@@ -14,13 +14,13 @@
     <h2> My booking</h2>
   </button>
 
-  <button class="btn btn-ghost" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <button class="btn btn-ghost" type="button" data-bs-toggle="collapse" data-bs-target="#offers" aria-expanded="false" aria-controls="collapseExample">
     <h2> All my offers</h2>
   </button>
 </div>
 
 
-<div class="collapse m-2" id="status">
+<div class="collapse m-2" id="offers_bookings">
   <div class="card card-body">
     <div class="items-card">
       <div class="row">
@@ -44,12 +44,12 @@
   </div>
 </div>
 
-<div class="collapse m-2" id="bookings">
+<div class="collapse m-2" id="offers">
   <div class="card card-body">
     <div class="items-card">
       <div class="row">
-        <% @bookings.each do |booking| %>
-          <%= render 'dashboards/offer', booking: @booking, offer: @offer %>
+        <% @my_offers.each do |offer| %>
+          <%= render 'dashboards/offer', offer: offer %>
         <% end %>
       </div>
     </div>

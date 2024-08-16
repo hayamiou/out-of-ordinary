@@ -20,6 +20,10 @@
 }
 
 .btn-home:hover {
-  box-shadow: 10px 5px 5px $primary;
+  box-shadow: 10px 5px 10px 0.5 $primary;
   color: white
+}
+
+.btn-succes{
+  border-radius: 10px;
 }

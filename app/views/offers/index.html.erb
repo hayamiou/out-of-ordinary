@@ -1,7 +1,7 @@
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("photo_banner.jpg")%>)">
     <div class="container">
       <h1> <strong>OUT</strong> OF <strong>ORDINARY</strong></h1>
-      <p>Be extraordinary.</p>
+      <p>Be extraordinary</p>
       <div class="links position-absolute bottom-0 end-0 px-5 py-5">
         <a><%= link_to 'Create an adventure', new_offer_path, class:'btn btn-home btn-ghost mx-4'%></a>
         <a href="#section1" class="btn btn-home btn-ghost" >Live the extraordinary</a>
@@ -16,7 +16,7 @@
         <% @offers.each do |offer| %>
           <div class="col pb-5">
             <%= link_to offer, class:"text-decoration-none" do %>
-              <div class="card-offer card-cover h-100 text-bg-dark rounded-4 shadow-lg", style="background-image: url(<%= offer.photo.attached? ? cl_image_path(offer.photo.key) : 'https://img.freepik.com/vecteurs-premium/vecteur-icone-image-par-defaut-page-image-manquante-pour-conception-site-web-application-mobile-aucune-photo-disponible_87543-11093.jpg' %>);">
+              <div class="card-offer card-cover h-100 text-bg-dark rounded-4 shadow-lg", style="background-image: url(<%= offer.photo.attached? ? cl_image_path(offer.photo.key) : 'https://mrwallpaper.com/images/hd/ios-13-dark-default-b87pdhc857zkxftr.jpg' %>);">
                 <div class="d-flex flex-column justify-content-end pb-3 text-white text-shadow-1">
                   <h3 class="p-5 lh-1 fw-bold"><%= offer.title %></h3>
                   <ul class="d-flex list-unstyled p-2 justify-content-between">

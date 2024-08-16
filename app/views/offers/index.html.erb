@@ -3,7 +3,7 @@
       <h1> <strong>OUT</strong> OF <strong>ORDINARY</strong></h1>
       <p>Be extraordinary</p>
       <div class="links position-absolute bottom-0 end-0 px-5 py-5">
-        <a><%= link_to 'Create an adventure', new_offer_path, class:'btn btn-home btn-ghost'%></a>
+        <a><%= link_to 'Create an adventure', new_offer_path, class:'btn btn-home btn-ghost mx-4'%></a>
         <a href="#section1" class="btn btn-home btn-ghost" >Live the extraordinary</a>
       </div>
     </div>
@@ -21,13 +21,13 @@
                   <h3 class="p-5 lh-1 fw-bold"><%= offer.title %></h3>
                   <ul class="d-flex list-unstyled p-2 justify-content-between">
                     <li>
-                      <small><%= offer.address %></small>
+                      <p><%= offer.address %></p>
                     </li>
                     <li class="d-flex align-items-center">
                       <svg class="bi me-2" width="1em" height="1em">
                         <use xlink:href="#calendar3"></use>
                       </svg>
-                      <small><%= offer.price %>$/day</small>
+                      <p><%= offer.price %>$/day</p>
                     </li>
                   </ul>
                 </div>

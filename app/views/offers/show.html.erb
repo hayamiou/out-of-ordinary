@@ -18,11 +18,11 @@
 <div class="container-card d-flex row">
   <div class="col-4 align-self-center">
     <div class="cards-offer d-flex mt-3 justify-content-evenly">
-      <div class="card-offer flex-column" style="height: 100%;">
+      <div class="card-offer flex-column ms-3" style="height: 100%;">
         <div class="card-offer-information">
           <h2> Information : </h2>
-          <p> 💳 <%= @offer.price %> € </p> align-middle
-          <p> 📍 <%= @offer.address %></p>
+          <p> 💳 <%= @offer.price %> € </p>
+          <p class = "ms-3" > 📍 <%= @offer.address %></p>
           <p> 👭👫👬 <%= @offer.places %> people(s) </p>
         </div>
         <div class="card-offer-description">
@@ -37,9 +37,9 @@
     <%= render 'map', class:"flex-column justify-content-center" %>
     <div class="d-flex justify-content-center mb-3">
       <div class = "">
-        <%= link_to '🔙', offer_path(@offer.prev), class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' if @offer.prev %>
+        <%= link_to 'Back', offer_path(@offer.prev), class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' if @offer.prev %>
         <%= link_to 'All', root_path, class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' %>
-        <%= link_to '🔜', offer_path(@offer.next), class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' if @offer.next %>
+        <%= link_to 'Next', offer_path(@offer.next), class:'ms-3 mt-3 px-5 py-2 form-actions btn btn-ghost' if @offer.next %>
       </div>
     </div>
   </div>

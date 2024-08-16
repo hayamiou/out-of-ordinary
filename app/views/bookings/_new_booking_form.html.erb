@@ -7,7 +7,7 @@
           <%= f.input :number_of_persons, input_html: { data: { action: "input->total-price#calculateTotalPrice", total_price_target: "input" } } %>
           <%= f.input :date_start, as: :string, input_html: { data: { controller: "datepicker", action: "input->total-price#calculateTotalPrice", total_price_target: "startDate" } } %>
           <%= f.input :date_end, as: :string, input_html: { data: { controller: "datepicker", action: "input->total-price#calculateTotalPrice", total_price_target: "endDate" } } %>
-          <%= f.button :submit, class:"text-center btn btn-ghost" %>
+          <%= f.submit "Book", class:"text-center btn btn-ghost" %>
         </div>
         <div id="total_price" class = "mt-4 text-center">
           Total Price: <span data-total-price-target= "totalPrice"></span>€

@@ -1,5 +1,5 @@
 .btn-ghost {
-  color: $text;
+  color: white;
   background-color: $primary;
   padding: 8px 24px;
   margin:auto;
@@ -12,7 +12,7 @@
 
 .btn-ghost:hover {
   opacity: 1;
-  color: $text;
+  color: white;
   box-shadow: 10px 5px 5px $primary;
 }
 
@@ -22,5 +22,6 @@
 
 .btn-home:hover {
   box-shadow: 10px 5px 5px $primary;
-  color: white
+  color: $text;
+  background-color:white ;
 }

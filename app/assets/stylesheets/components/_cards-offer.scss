@@ -11,14 +11,20 @@
 
 .cards-offer {
   grid-template-columns: 1fr 1fr;
-  grid-gap: 25px;
+  grid-gap: 20px;
   text-align: center;
 
 }
 
-.cards-offer h2 {
+.cards-offer {
+  h2 {
   font-size: 32px;
   font-weight: bold;
+  }
+  p {
+    font-size: 28px;
+    margin-left: 7px;
+  }
 }
 
 .card-cover{

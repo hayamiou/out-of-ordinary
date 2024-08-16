@@ -13,6 +13,7 @@
   grid-gap: 25px;
   text-align: center;
 
+
 }
 
 .cards-offer h2 {
@@ -25,4 +26,9 @@
     background-size:auto;
     object-position:center;
   }
+}
+
+.card-offer{
+  background-size: cover;
+  background-position: center;
 }

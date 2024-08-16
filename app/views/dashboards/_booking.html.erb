@@ -1,8 +1,7 @@
 <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-  <div class="card-dashboard">
-    <div class="picture">
+  <div class="cards-offer">
+    <div class="card-dashboard">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-    </div>
     <div class="card-dashboard-infos">
       <h2 class="text-truncate p-2"><%= booking.offer.title %></h2>
       <p><strong><%= booking.total_prices %></strong> € </p>
@@ -18,12 +17,13 @@
           <%= link_to "Decline", booking_path(booking, accepted: false), data: { turbo_method: :patch }, class:"btn btn-danger" %>
         <% end %>
       <% else %>
-        <% if booking.accepted.nil? %>
-          <p>Awaiting for answer</p>
-        <% else %>
-          <p>Status : <%= booking.accepted? ? "Accepted" : "Declined" %></p>
-        <% end %>
+      <% if booking.accepted.nil? %>
+        <p>Awaiting for answer</p>
+      <% else %>
+        <p>Status : <%= booking.accepted? ? "Accepted" : "Declined" %></p>
       <% end %>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>

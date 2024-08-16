@@ -1,0 +1,18 @@
+<div class="cards-offer">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+  <% @my_offers.each do |offers| %>
+    <div class="card-dashboard">
+      <div class="picture">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      </div>
+      <div class="card-dashboard-infos">
+        <h2 class="text-truncate p-2"><%= offers.title %></h2>
+        <p><strong><%= offers.description %></strong> € </p>
+        <p><%= offers.price %> € </p>
+        <p><%= offers.address %></p>
+        <p>For <%= offers.places %> 👫👬👭</p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
